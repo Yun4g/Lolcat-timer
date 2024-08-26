@@ -92,30 +92,25 @@ setInterval(automaticUpdateClock, 1000);
 let partyTimeButton = document.getElementById("partyTimeButton");
 
 
-let partyTimeEvent = function()
-{
-
-    if(partyTime < 0)
-        {
-      partyTime = new Date().getHours();
-      partyTimeButton.textContent = "party over";
-      partyTimeButton.style.backgroundColor ="#0A8DAB";
-    } 
-    else
-    {
-      partyTime = -1;
-      partyTimeButton.textContent = "party Time";
-      partyTimeButton.style.backgroundColor = "#222";
+partyTimeButton.addEventListener('click', () =>{
+   if(partyTime < 0)
+      {
+    partyTime = new Date().getHours();
+    partyTimeButton.textContent = "party over";
+    partyTimeButton.style.backgroundColor ="#0A8DAB";
+  } 
+  else
+  {
+    partyTime = -1;
+    partyTimeButton.textContent = "party Time";
+    partyTimeButton.style.backgroundColor = "#222";
 
 
-    }
+  }
 
 
-}
+});
 
- partyTimeButton.addEventListener('click', partyTimeEvent);
-
- partyTimeEvent();
 
 
 
